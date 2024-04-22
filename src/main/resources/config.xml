@@ -10,4 +10,13 @@
 	                    http://www.springframework.org/schema/aop
 	                    http://www.springframework.org/schema/aop/spring-aop.xsd">
 
+       <bean id="t1" class="kr.hs.Study.Beans.TestBean1"/> <!--관심사(포인트컷) 객체-->
+       <bean id="advisor" class="kr.hs.Study.Advisor.AdviceClass"/> <!--어드바이스 객체-->
+
+       <aop:config> <!--메서드를 항상 지켜볼 것을 스프링에게 명령하는 것-->
+              <aop:aspect ref="Advisor"> <!--어드바이스 등록 (aspect)-->
+                     <aop:pointcut id="point" expression="execution(* method1())"/> <!--관심사 등록-->
+                     <aop:before method="before" pointcut-ref="point"/> <!--어디에 언제 적용할 건지-->
+              </aop:aspect>
+       </aop:config>
 </beans>

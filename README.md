@@ -32,7 +32,9 @@
 
 ---
 
-### xml 세팅
-1. advice 등록
-2. point cut 등록
-3. advice를 point cut에 삽입 & 삽입 시점까지
+### 이 코드의 파일 구조
+> 1. kr.hs.Study > Main.java
+> 2. kr.hs.Study.Beans.TestBean1 - method1() / method2()
+> 3. kr.hs.Study.Beans.Advisor.AdviceClass - before()
+> 4. **resources > config.xml**
+> 5. pom.xml
